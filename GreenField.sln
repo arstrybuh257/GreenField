@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenField.Api", "GreenField.Api\GreenField.Api.csproj", "{9B8D1D6F-9082-4017-9A1F-AF4035AF32CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenField.DAL", "GreenField.DAL\GreenField.DAL.csproj", "{395B7D3C-5444-4FA4-9BC8-3FBCC34A7E18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenField.Common", "GreenField.Common\GreenField.Common.csproj", "{435CCA7A-75A1-4DA9-90C0-D3280DD190F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenField.BLL", "GreenField.BLL\GreenField.BLL.csproj", "{A65761CE-631E-4011-BDC4-4E08CD1A2008}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B8D1D6F-9082-4017-9A1F-AF4035AF32CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B8D1D6F-9082-4017-9A1F-AF4035AF32CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B8D1D6F-9082-4017-9A1F-AF4035AF32CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B8D1D6F-9082-4017-9A1F-AF4035AF32CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{395B7D3C-5444-4FA4-9BC8-3FBCC34A7E18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{395B7D3C-5444-4FA4-9BC8-3FBCC34A7E18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{395B7D3C-5444-4FA4-9BC8-3FBCC34A7E18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{395B7D3C-5444-4FA4-9BC8-3FBCC34A7E18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{435CCA7A-75A1-4DA9-90C0-D3280DD190F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{435CCA7A-75A1-4DA9-90C0-D3280DD190F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{435CCA7A-75A1-4DA9-90C0-D3280DD190F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{435CCA7A-75A1-4DA9-90C0-D3280DD190F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A65761CE-631E-4011-BDC4-4E08CD1A2008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A65761CE-631E-4011-BDC4-4E08CD1A2008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A65761CE-631E-4011-BDC4-4E08CD1A2008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A65761CE-631E-4011-BDC4-4E08CD1A2008}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
