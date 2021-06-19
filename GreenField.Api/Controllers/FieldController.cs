@@ -10,24 +10,28 @@ using GreenField.BLL.Services.ImageService;
 using GreenField.BLL.Services.Interfaces;
 using GreenField.BLL.Types;
 using GreenField.Common.Constants;
+using GreenField.Common.Messaging;
+using GreenField.Common.Messaging.Messages;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GreenField.Api.Controllers
 {
-    [Authorize(Roles = Roles.OrganisationAdmin)]
+    [Authorize(Roles = Roles.OrganisationAdmin + ", " + Roles.User)]
     public class FieldController : BaseController
     {
         private readonly IFieldService _fieldService;
         private readonly IImageService _imageService;
         private readonly IMapper _mapper;
+        private readonly IRabbitMqBus _bus;
         private const string ImagesPath = @"C:\ImagesFromGF";
 
-        public FieldController(IFieldService fieldService, IMapper mapper, IImageService imageService)
+        public FieldController(IFieldService fieldService, IMapper mapper, IImageService imageService, IRabbitMqBus bus)
         {
             _fieldService = fieldService;
             _mapper = mapper;
             _imageService = imageService;
+            _bus = bus;
         }
         
         [HttpGet]
@@ -97,6 +101,38 @@ namespace GreenField.Api.Controllers
             }
             await _fieldService.DeleteAsync(id, OrganisationId);
             return NoContent();
+        }
+        
+        [HttpGet("updateFieldStatus/{fieldId}")]
+        public async Task<IActionResult> UpdateFieldStatus(Guid fieldId)
+        {
+            if (OrganisationId == Guid.Empty)
+            {
+                return Forbid();
+            }
+            
+            _bus.Publish(new CheckFieldOnDemand()
+            {
+                FieldId = fieldId
+            });
+
+            return Ok("Message was sent");
+        }
+        
+        [HttpGet("updateAllFieldsStatuses")]
+        public async Task<IActionResult> UpdateAllFieldsStatuses()
+        {
+            if (OrganisationId == Guid.Empty)
+            {
+                return Forbid();
+            }
+            
+            _bus.Publish(new CheckAllFieldsOnDemand()
+            {
+                OrganisationId = OrganisationId
+            });
+
+            return Ok("Message was sent");
         }
     }
 }

@@ -281,6 +281,7 @@
           <e p="IGreenFieldMessage.cs" t="Include" />
           <e p="IRabbitMqBus.cs" t="Include" />
           <e p="Messages" t="Include">
+            <e p="CheckAllFieldsOnDemand.cs" t="Include" />
             <e p="CheckFieldOnDemand.cs" t="Include" />
             <e p="PestDetectedMessage.cs" t="Include" />
             <e p="UserRegisteredMessage.cs" t="Include" />
@@ -410,6 +411,7 @@
         </e>
         <e p="GreenField.IoT.csproj" t="IncludeRecursive" />
         <e p="Handlers" t="Include">
+          <e p="CheckAllFieldsOnDemandHandler.cs" t="Include" />
           <e p="CheckFieldOnDemandHandler.cs" t="Include" />
         </e>
         <e p="Interfaces" t="Include">

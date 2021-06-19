@@ -34,7 +34,15 @@ namespace GreenField.BLL.Services.FieldService
             {
                 foreach (var crop in field.Crops)
                 {
-                    crop.CultureName = _cultureRepository.GetAsync(crop.CultureId).Result.Name;
+                    try
+                    {
+                        crop.CultureName = _cultureRepository.GetAsync(crop.CultureId).Result.Name;
+                    }
+                    catch
+                    {
+                        crop.CultureName = "Unknown";
+                    }
+                    
                 }
             }
             
