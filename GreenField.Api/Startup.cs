@@ -5,7 +5,11 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Autofac;
 using GreenField.Api.Extensions;
+using GreenField.Common.Configuration;
+using GreenField.Common.Messaging;
+using GreenField.Common.Messaging.Messages;
 using GreenField.DAL.Entities;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +37,8 @@ namespace GreenField.Api
             services.AddControllers();
             services.ConfigureSwagger();
             services.ConfigureIoC();
+            services.AddMediatR(typeof(Startup));
+            services.AddSingleton<IRabbitMqBus, RabbitMqBus>();
             
             services.AddCors(options =>
             {
@@ -45,7 +51,9 @@ namespace GreenField.Api
             });
             
             services.ConfigureAutoMapper();
-            services.ConfigureAuthentication();
+            services.ConfigureAuthentication(Configuration);
+            
+            services.Configure<JwtOptions>(Configuration.GetSection("JwtAuthentication"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,11 +65,15 @@ namespace GreenField.Api
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GreenField.Api v1"));
             }
-
-            app.UseHttpsRedirection();
-
+            //app.UseHttpsRedirection();
+            app.UseCors("CorsPolicy");
             app.UseRouting();
 
+            RabbitMqBus bus = app.ApplicationServices.GetRequiredService<RabbitMqBus>();
+            bus.Subscribe<PestDetectedMessage>("apiService");
+            bus.Subscribe<WeedDetectedMessage>("apiService");
+            
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseErrorHandler(true);
@@ -70,6 +82,23 @@ namespace GreenField.Api
         
         public void ConfigureContainer(ContainerBuilder builder)
         {
+            builder
+                .RegisterType<Mediator>()
+                .As<IMediator>()
+                .InstancePerLifetimeScope();
+            
+            builder.Register<ServiceFactory>(context =>
+            {
+                var c = context.Resolve<IComponentContext>();
+                return t => c.Resolve(t);
+            });
+            
+            builder.Register<RabbitMqBus>(context =>
+            {
+                var c = context.Resolve<IComponentContext>();
+                return new RabbitMqBus(c);
+            });
+            
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
                 .AsImplementedInterfaces();
             builder.AddMongo();
@@ -82,6 +111,7 @@ namespace GreenField.Api
             builder.AddMongoRepository<Field>("Fields");
             builder.AddMongoRepository<Culture>("Culture");
             builder.AddMongoRepository<Pesticide>("Pesticides");
+            builder.AddMongoRepository<Component>("Component");
         }
     }
 }

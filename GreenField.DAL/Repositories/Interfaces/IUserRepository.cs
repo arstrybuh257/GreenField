@@ -9,10 +9,11 @@ namespace GreenField.DAL.Repositories.Interfaces
     {
         public Task<IEnumerable<User>> BrowseAsync();
         public Task<User> GetAsync(Guid id);
+        public Task<User> GetByEmailAsync(string email);
         public Task CreateAsync(User user);
         public Task UpdateAsync(User user);
         public Task DeleteAsync(Guid id);
-        public Task<bool> ExistsAsync(string email);
-        public Task<bool> ExistsAsync(Guid id);
+        public Task<bool> ExistsAsync(string email, Guid? organisationId);
+        public Task<bool> ExistsAsync(Guid id, Guid? organisationId);
     }
 }

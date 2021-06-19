@@ -43,7 +43,7 @@ namespace GreenField.DAL.Repositories
 
         public async Task<bool> ExistsAsync(string name)
         {
-            return await _repository.ExistsAsync(u=>u.Name == name);
+            return await _repository.ExistsAsync(u=>u.Kind == name);
         }
 
         public async Task<bool> ExistsAsync(Guid id)

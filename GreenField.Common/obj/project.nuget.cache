@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "ODyj7QWR0eKN6LYjZl5smyil0Op7RY+Le3C8fsFWI1+pLg3DfYR0PlfPN9eOBDj3sz8fzMOaA2Kk2RMtWJGOhA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Arseniy\\Desktop\\CourseProject\\Project\\GreenField\\GreenField.Common\\GreenField.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Arseniy\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
+    "C:\\Users\\Arseniy\\.nuget\\packages\\easynetq\\7.0.0-alpha4\\easynetq.7.0.0-alpha4.nupkg.sha512",
+    "C:\\Users\\Arseniy\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\Arseniy\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Arseniy\\.nuget\\packages\\rabbitmq.client\\6.2.1\\rabbitmq.client.6.2.1.nupkg.sha512",
+    "C:\\Users\\Arseniy\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
+    "C:\\Users\\Arseniy\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\Arseniy\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using GreenField.DAL.DataAccess.Interfaces;
 using GreenField.DAL.Entities;
@@ -26,6 +27,11 @@ namespace GreenField.DAL.Repositories
             return await _repository.GetAsync(id);
         }
 
+        public async Task<User> GetByEmailAsync(string email)
+        {
+            return (await _repository.FindAsync(x => x.Email == email)).FirstOrDefault();
+        }
+
         public async Task CreateAsync(User user)
         {
             await _repository.AddAsync(user);
@@ -41,14 +47,14 @@ namespace GreenField.DAL.Repositories
             await _repository.DeleteAsync(id);
         }
 
-        public async Task<bool> ExistsAsync(string email)
+        public async Task<bool> ExistsAsync(string email,Guid? organisationId = null)
         {
-            return await _repository.ExistsAsync(u=>u.Email == email);
+            return await _repository.ExistsAsync(u=>u.Email == email && (organisationId == null || u.OrganisationId == organisationId));
         }
 
-        public async Task<bool> ExistsAsync(Guid id)
+        public async Task<bool> ExistsAsync(Guid id, Guid? organisationId = null)
         {
-            return await _repository.ExistsAsync(c=>c.Id == id);
+            return await _repository.ExistsAsync(c=>c.Id == id && (organisationId == null || c.OrganisationId == organisationId));
         }
     }
 }

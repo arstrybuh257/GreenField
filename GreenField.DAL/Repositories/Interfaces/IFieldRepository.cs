@@ -12,6 +12,6 @@ namespace GreenField.DAL.Repositories.Interfaces
         public Task CreateAsync(Field field);
         public Task UpdateAsync(Field field);
         public Task DeleteAsync(Guid id);
-        public Task<bool> ExistsAsync(Guid id);
+        public Task<bool> ExistsAsync(Guid guid, Guid id);
     }
 }

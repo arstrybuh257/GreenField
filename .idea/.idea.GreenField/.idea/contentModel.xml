@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Arseniy\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Arseniy\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_GreenField.-479728581.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Arseniy\AppData\Roaming\JetBrains\Rider2020.3\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\Arseniy\AppData\Roaming\JetBrains\Rider2020.3\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Arseniy\AppData\Roaming\JetBrains\Rider2020.3\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\Arseniy\Desktop\CourseProject\Project\GreenField" t="IncludeFlat">
+      <e p="GreenField.Api" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="AutoMapper" t="Include">
+          <e p="AutoMapperConfiguration.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="AuthController.cs" t="Include" />
+          <e p="BackupController.cs" t="Include" />
+          <e p="BaseController.cs" t="Include" />
+          <e p="ComponentController.cs" t="Include" />
+          <e p="CultureController.cs" t="Include" />
+          <e p="DroneController.cs" t="Include" />
+          <e p="FieldController.cs" t="Include" />
+          <e p="OrganisationUserController.cs" t="Include" />
+          <e p="OrganizationController.cs" t="Include" />
+          <e p="PestController.cs" t="Include" />
+          <e p="PesticideController.cs" t="Include" />
+          <e p="RecommendationController.cs" t="Include" />
+          <e p="SensorController.cs" t="Include" />
+          <e p="UserController.cs" t="Include" />
+          <e p="WeedController.cs" t="Include" />
+        </e>
+        <e p="extensions" t="Include">
+          <e p="ErrorHandlingExtension.cs" t="Include" />
+          <e p="MongoExtensions.cs" t="Include" />
+          <e p="StartupExtensions.cs" t="Include" />
+        </e>
+        <e p="GreenField.Api.csproj" t="IncludeRecursive" />
+        <e p="Handlers" t="Include">
+          <e p="PestDetectedHandler.cs" t="Include" />
+          <e p="WeedDetectedHandler.cs" t="Include" />
+        </e>
+        <e p="Middlewares" t="Include">
+          <e p="ErrorHandlerMiddleware.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="Auth" t="Include">
+            <e p="LoginRequest.cs" t="Include" />
+          </e>
+          <e p="Component" t="Include">
+            <e p="CreateComponentRequest.cs" t="Include" />
+            <e p="UpdateComponentRequest.cs" t="Include" />
+          </e>
+          <e p="Crop" t="Include">
+            <e p="AddCropRequest.cs" t="Include" />
+          </e>
+          <e p="Culture" t="Include">
+            <e p="CreateCultureRequest.cs" t="Include" />
+            <e p="UpdateCultureRequest.cs" t="Include" />
+          </e>
+          <e p="DeviceReposts" t="Include">
+            <e p="PestReport.cs" t="Include" />
+          </e>
+          <e p="Drone" t="Include">
+            <e p="CreateDroneRequest.cs" t="Include" />
+            <e p="UpdateDroneRequest.cs" t="Include" />
+          </e>
+          <e p="ErrorHandling" t="Include">
+            <e p="ApiErrorResponse.cs" t="Include" />
+            <e p="ErrorModel.cs" t="Include" />
+          </e>
+          <e p="Field" t="Include">
+            <e p="CreateFieldRequest.cs" t="Include" />
+            <e p="UpdateFieldRequest.cs" t="Include" />
+          </e>
+          <e p="Organisation" t="Include">
+            <e p="CreateOrganisationRequest.cs" t="Include" />
+            <e p="UpdateOrganizationRequest.cs" t="Include" />
+          </e>
+          <e p="Pest" t="Include">
+            <e p="CreatePestRequest.cs" t="Include" />
+            <e p="UpdatePestRequest.cs" t="Include" />
+          </e>
+          <e p="Pesticide" t="Include">
+            <e p="CreatePesticideRequest.cs" t="Include" />
+            <e p="UpdatePesticideRequest.cs" t="Include" />
+          </e>
+          <e p="Sensor" t="Include">
+            <e p="CreateSensorRequest.cs" t="Include" />
+            <e p="UpdateSensorRequest.cs" t="Include" />
+          </e>
+          <e p="User" t="Include">
+            <e p="CreateOrganisationUserRequest.cs" t="Include" />
+            <e p="CreateSystemAdminRequest.cs" t="Include" />
+            <e p="CreateUserRequest.cs" t="Include" />
+            <e p="UpdateUserRequest.cs" t="Include" />
+          </e>
+          <e p="Weed" t="Include">
+            <e p="CreateWeedRequest.cs" t="Include" />
+            <e p="UpdateWeedRequest.cs" t="Include" />
+          </e>
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="GreenField.Api.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+      </e>
+      <e p="GreenField.BLL" t="IncludeRecursive">
+        <e p="Authentication" t="Include">
+          <e p="ITokenService.cs" t="Include" />
+          <e p="PasswordManager.cs" t="Include" />
+          <e p="TokenService.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="GreenField.BLL.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="GreenField.BLL.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Recommendations" t="Include">
+          <e p="PestDetectedMessageWithRecommendation.cs" t="Include" />
+          <e p="Services" t="Include">
+            <e p="IRecomendationService.cs" t="Include" />
+            <e p="RecommendationService.cs" t="Include" />
+          </e>
+          <e p="Types" t="Include">
+            <e p="NextCropRecommendation.cs" t="Include" />
+            <e p="PestDetectedRecommendation.cs" t="Include" />
+            <e p="PesticideRecommendation.cs" t="Include" />
+            <e p="PesticidesShouldBeUsedRecommendation.cs" t="Include" />
+            <e p="RecommendationLevel.cs" t="Include" />
+            <e p="ShouldCultureBeSeededOnThisFieldRecommendation.cs" t="Include" />
+            <e p="WeedDetectedRecommendation.cs" t="Include" />
+            <e p="WhereSeedRecommendation.cs" t="Include" />
+          </e>
+          <e p="WeedDetectedMessageWithRecommendation.cs" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="BackupService.cs" t="Include" />
+          <e p="ComponentService" t="Include">
+            <e p="ComponentService.cs" t="Include" />
+            <e p="IComponentService.cs" t="Include" />
+            <e p="Models" t="Include">
+              <e p="BrowseComponents.cs" t="Include" />
+              <e p="ComponentDto.cs" t="Include" />
+            </e>
+          </e>
+          <e p="CultureService" t="Include">
+            <e p="CultureService.cs" t="Include" />
+            <e p="ICultureService.cs" t="Include" />
+            <e p="Models" t="Include">
+              <e p="BrowseCultures.cs" t="Include" />
+              <e p="CultureDto.cs" t="Include" />
+            </e>
+          </e>
+          <e p="DroneService" t="Include">
+            <e p="DroneService.cs" t="Include" />
+            <e p="IDroneService.cs" t="Include" />
+            <e p="Models" t="Include">
+              <e p="BrowseDrones.cs" t="Include" />
+              <e p="DroneDto.cs" t="Include" />
+            </e>
+          </e>
+          <e p="FieldService" t="Include">
+            <e p="FieldService.cs" t="Include" />
+            <e p="IFieldService.cs" t="Include" />
+            <e p="Models" t="Include">
+              <e p="BrowseFields.cs" t="Include" />
+              <e p="FieldDto.cs" t="Include" />
+            </e>
+          </e>
+          <e p="IdentityService.cs" t="Include" />
+          <e p="ImageService" t="Include">
+            <e p="IImageService.cs" t="Include" />
+            <e p="ImageService.cs" t="Include" />
+          </e>
+          <e p="Interfaces" t="Include">
+            <e p="IBackupService.cs" t="Include" />
+            <e p="IIdentityService.cs" t="Include" />
+          </e>
+          <e p="MessageService" t="Include">
+            <e p="IMessageService.cs" t="Include" />
+            <e p="MessageService.cs" t="Include" />
+          </e>
+          <e p="OrganizationService" t="Include">
+            <e p="IOrganizationService.cs" t="Include" />
+            <e p="Models" t="Include">
+              <e p="BrowseOrganizations.cs" t="Include" />
+              <e p="OrganizationDto.cs" t="Include" />
+            </e>
+            <e p="OrganizationService.cs" t="Include" />
+          </e>
+          <e p="PesticideService" t="Include">
+            <e p="IPesticideService.cs" t="Include" />
+            <e p="Models" t="Include">
+              <e p="BrowsePesticides.cs" t="Include" />
+              <e p="PesticideDto.cs" t="Include" />
+            </e>
+            <e p="PesticideService.cs" t="Include" />
+          </e>
+          <e p="PestService" t="Include">
+            <e p="IPestService.cs" t="Include" />
+            <e p="Models" t="Include">
+              <e p="BrowsePests.cs" t="Include" />
+              <e p="PestDto.cs" t="Include" />
+            </e>
+            <e p="PestService.cs" t="Include" />
+          </e>
+          <e p="SensorService" t="Include">
+            <e p="ISensorService.cs" t="Include" />
+            <e p="Models" t="Include">
+              <e p="BrowseSensors.cs" t="Include" />
+              <e p="SensorDto.cs" t="Include" />
+            </e>
+            <e p="SensorService.cs" t="Include" />
+          </e>
+          <e p="UserService" t="Include">
+            <e p="IUserService.cs" t="Include" />
+            <e p="Messages" t="Include" />
+            <e p="Models" t="Include">
+              <e p="BrowseUsers.cs" t="Include" />
+              <e p="UserDto.cs" t="Include" />
+            </e>
+            <e p="UserService.cs" t="Include" />
+          </e>
+          <e p="WeedService" t="Include">
+            <e p="IWeedService.cs" t="Include" />
+            <e p="Models" t="Include">
+              <e p="BrowseWeeds.cs" t="Include" />
+              <e p="WeedDto.cs" t="Include" />
+            </e>
+            <e p="WeedService.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Types" t="Include">
+          <e p="Credentials.cs" t="Include" />
+          <e p="CropDto.cs" t="Include" />
+          <e p="ImportResult.cs" t="Include" />
+        </e>
+      </e>
+      <e p="GreenField.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="JwtOptions.cs" t="Include" />
+        </e>
+        <e p="Constants" t="Include">
+          <e p="Roles.cs" t="Include" />
+          <e p="UnchangeableEntities.cs" t="Include" />
+        </e>
+        <e p="Enums" t="Include">
+          <e p="Country.cs" t="Include" />
+          <e p="DangerLevel.cs" t="Include" />
+          <e p="DeviceStatus.cs" t="Include" />
+          <e p="FieldStatus.cs" t="Include" />
+          <e p="Month.cs" t="Include" />
+          <e p="OrganisationStatus.cs" t="Include" />
+          <e p="PesticideType.cs" t="Include" />
+          <e p="Role.cs" t="Include" />
+          <e p="SensorType.cs" t="Include" />
+          <e p="UserStatus.cs" t="Include" />
+        </e>
+        <e p="Exceptions" t="Include">
+          <e p="GreenFieldException.cs" t="Include" />
+          <e p="GreenFieldNotFoundException.cs" t="Include" />
+        </e>
+        <e p="extensions" t="Include" />
+        <e p="GreenField.Common.csproj" t="IncludeRecursive" />
+        <e p="Messaging" t="Include">
+          <e p="IGreenFieldMessage.cs" t="Include" />
+          <e p="IRabbitMqBus.cs" t="Include" />
+          <e p="Messages" t="Include">
+            <e p="CheckFieldOnDemand.cs" t="Include" />
+            <e p="PestDetectedMessage.cs" t="Include" />
+            <e p="UserRegisteredMessage.cs" t="Include" />
+            <e p="WeedDetectedMessage.cs" t="Include" />
+          </e>
+          <e p="RabbitMqBus.cs" t="Include" />
+          <e p="RabbitMqOptions.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="GreenField.Common.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="GreenField.DAL" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DataAccess" t="Include">
+          <e p="Interfaces" t="Include">
+            <e p="IRepository.cs" t="Include" />
+          </e>
+          <e p="Mongo" t="Include">
+            <e p="MongoDbOptions.cs" t="Include" />
+            <e p="MongoRepository.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Entities" t="Include">
+          <e p="BaseEntity.cs" t="Include" />
+          <e p="Component.cs" t="Include" />
+          <e p="Culture.cs" t="Include" />
+          <e p="Drone.cs" t="Include" />
+          <e p="Field.cs" t="Include" />
+          <e p="Organisation.cs" t="Include" />
+          <e p="Pest.cs" t="Include" />
+          <e p="Pesticide.cs" t="Include" />
+          <e p="Sensor.cs" t="Include" />
+          <e p="User.cs" t="Include" />
+          <e p="Weed.cs" t="Include" />
+        </e>
+        <e p="GreenField.DAL.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="GreenField.DAL.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Repositories" t="Include">
+          <e p="ComponentRepository.cs" t="Include" />
+          <e p="CultureRepository.cs" t="Include" />
+          <e p="DroneRepository.cs" t="Include" />
+          <e p="FieldRepository.cs" t="Include" />
+          <e p="Interfaces" t="Include">
+            <e p="IComponentRepository.cs" t="Include" />
+            <e p="ICultureRepository.cs" t="Include" />
+            <e p="IDroneRepository.cs" t="Include" />
+            <e p="IFieldRepository.cs" t="Include" />
+            <e p="IOrganisationRepository.cs" t="Include" />
+            <e p="IPesticideRepository.cs" t="Include" />
+            <e p="IPestRepository.cs" t="Include" />
+            <e p="ISensorRepository.cs" t="Include" />
+            <e p="IUserRepository.cs" t="Include" />
+            <e p="IWeedRepository.cs" t="Include" />
+          </e>
+          <e p="OrganisationRepository.cs" t="Include" />
+          <e p="PesticideRepository.cs" t="Include" />
+          <e p="PestRepository.cs" t="Include" />
+          <e p="SensorRepository.cs" t="Include" />
+          <e p="UserRepository.cs" t="Include" />
+          <e p="WeedRepository.cs" t="Include" />
+        </e>
+        <e p="ValueObjects" t="Include">
+          <e p="ComponentWithDose.cs" t="Include" />
+          <e p="Coordinates.cs" t="Include" />
+          <e p="Crop.cs" t="Include" />
+          <e p="DroneStatus.cs" t="Include" />
+          <e p="FieldCoordinates.cs" t="Include" />
+          <e p="PesticideWithDose.cs" t="Include" />
+        </e>
+      </e>
+      <e p="GreenField.EmailService" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="HealthCheckController.cs" t="Include" />
+        </e>
+        <e p="extensions" t="Include">
+          <e p="MongoExtensions.cs" t="Include" />
+        </e>
+        <e p="GreenField.EmailService.csproj" t="IncludeRecursive" />
+        <e p="Handlers" t="Include">
+          <e p="UserRegisteredHandler.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="EmailServiceLog.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="GreenField.EmailService.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+      </e>
+      <e p="GreenField.IoT" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Constants" t="Include">
+          <e p="Configuration.cs" t="Include" />
+          <e p="Constants.cs" t="Include" />
+          <e p="Endpoints.cs" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="HealthCheckController.cs" t="Include" />
+        </e>
+        <e p="DataGenerators" t="Include">
+          <e p="PestCheckDataGenerator.cs" t="Include" />
+          <e p="WeedCheckDataGenerator.cs" t="Include" />
+        </e>
+        <e p="GreenField.IoT.csproj" t="IncludeRecursive" />
+        <e p="Handlers" t="Include">
+          <e p="CheckFieldOnDemandHandler.cs" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="IAuthService.cs" t="Include" />
+          <e p="IDataProvider.cs" t="Include" />
+          <e p="IFieldService.cs" t="Include" />
+          <e p="IPestService.cs" t="Include" />
+          <e p="ITokenProvider.cs" t="Include" />
+          <e p="IWeedService.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="Field.cs" t="Include" />
+          <e p="Pest.cs" t="Include" />
+          <e p="PestDetectedResult.cs" t="Include" />
+          <e p="Weed.cs" t="Include" />
+          <e p="WeedDetectedResult.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="GreenField.IoT.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="AuthService.cs" t="Include" />
+          <e p="FieldService.cs" t="Include" />
+          <e p="PestService.cs" t="Include" />
+          <e p="WeedService.cs" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="Utils" t="Include">
+          <e p="BackgroundCheckWorker.cs" t="Include" />
+          <e p="CheckHelper.cs" t="Include" />
+          <e p="DataProvider.cs" t="Include" />
+          <e p="DecisionHelper.cs" t="Include" />
+          <e p="TokenProvider.cs" t="Include" />
+        </e>
+      </e>
+      <e p="GreenField.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

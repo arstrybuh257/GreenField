@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using GreenField.DAL.DataAccess.Interfaces;
 using GreenField.DAL.Entities;
@@ -16,7 +17,7 @@ namespace GreenField.DAL.Repositories
             _repository = repository;
         }
 
-        public async Task<IEnumerable<Pesticide>> BrowseAsync()
+        public async Task<IEnumerable<Pesticide>> BrowseAsync(Expression<Func<Pesticide, bool>> pesticidePredicate)
         {
             return await _repository.BrowseAsync(x=>true, new object());
         }

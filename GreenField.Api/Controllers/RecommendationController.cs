@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
-using GreenField.BLL.NextCropAdvisor;
-using GreenField.BLL.PesticideAdvisor;
+using GreenField.BLL.Recommendations;
+using GreenField.BLL.Recommendations.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GreenField.Api.Controllers
@@ -10,27 +10,26 @@ namespace GreenField.Api.Controllers
     [ApiController]
     public class RecommendationController : ControllerBase
     {
-        private readonly IPesticideAdvisor _pesticideAdvisor;
-        private readonly INextCropAdvisor _nextCropAdvisor;
+        private readonly IRecommendationService _recommendationService;
 
-        public RecommendationController(IPesticideAdvisor pesticideAdvisor, INextCropAdvisor nextCropAdvisor)
+
+        public RecommendationController(IRecommendationService recommendationService)
         {
-            _pesticideAdvisor = pesticideAdvisor;
-            _nextCropAdvisor = nextCropAdvisor;
+            _recommendationService = recommendationService;
         }
         
         [HttpGet("nextCrop/{fieldId}")]
         public async Task<IActionResult> NextCrop(Guid fieldId)
         {
-            var recommendation = await _nextCropAdvisor.GetRecommendation(fieldId);
-            return Ok(recommendation);
+            //var recommendation = await _recommendationService.GetRecommendation(fieldId);
+            return Ok();
         }
         
         [HttpGet("killWeed/{fieldId}")]
         public async Task<IActionResult> KilWeed(Guid fieldId)
         {
-            var recommendation = await _pesticideAdvisor.GetRecommendation();
-            return Ok(recommendation);
+            //var recommendation = await _pesticideAdvisor.GetRecommendation();
+            return Ok();
         }
     }
 }

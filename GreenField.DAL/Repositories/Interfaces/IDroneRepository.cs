@@ -12,6 +12,6 @@ namespace GreenField.DAL.Repositories.Interfaces
         public Task CreateAsync(Drone drone);
         public Task UpdateAsync(Drone drone);
         public Task DeleteAsync(Guid id);
-        public Task<bool> ExistsAsync(Guid id);
+        public Task<bool> ExistsAsync(Guid guid, Guid id);
     }
 }

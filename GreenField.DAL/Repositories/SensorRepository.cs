@@ -41,9 +41,9 @@ namespace GreenField.DAL.Repositories
             await _repository.DeleteAsync(id);
         }
 
-        public async Task<bool> ExistsAsync(Guid id)
+        public async Task<bool> ExistsAsync(Guid id, Guid organisationId)
         {
-            return await _repository.ExistsAsync(c=>c.Id == id);
+            return await _repository.ExistsAsync(c=>c.Id == id && c.OrganisationId == organisationId);
         }
     }
 }

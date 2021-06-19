@@ -1,12 +1,30 @@
 ﻿using System.Collections.Generic;
 using System.Text;
-using AutoMapper.Configuration;
 using GreenField.Api.AutoMapper;
+using GreenField.BLL.Authentication;
+using GreenField.BLL.Recommendations.Services;
 using GreenField.BLL.Services;
+using GreenField.BLL.Services.ComponentService;
+using GreenField.BLL.Services.CultureService;
+using GreenField.BLL.Services.Drone;
+using GreenField.BLL.Services.DroneService;
+using GreenField.BLL.Services.FieldService;
+using GreenField.BLL.Services.ImageService;
 using GreenField.BLL.Services.Interfaces;
+using GreenField.BLL.Services.MessageService;
+using GreenField.BLL.Services.OrganizationService;
+using GreenField.BLL.Services.PesticideService;
+using GreenField.BLL.Services.PestService;
+using GreenField.BLL.Services.Sensor;
+using GreenField.BLL.Services.SensorService;
+using GreenField.BLL.Services.UserService;
+using GreenField.BLL.Services.WeedService;
+using GreenField.DAL.Entities;
 using GreenField.DAL.Repositories;
 using GreenField.DAL.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -17,7 +35,7 @@ namespace GreenField.Api.Extensions
     {
         public static IServiceCollection ConfigureIoC(this IServiceCollection services)
         {
-            services.AddScoped<IOrganisationService, OrganisationService>();
+            services.AddScoped<IOrganizationService, OrganizationService>();
             services.AddScoped<IOrganisationRepository, OrganisationRepository>();
             
             services.AddScoped<IUserRepository, UserRepository>();
@@ -44,7 +62,19 @@ namespace GreenField.Api.Extensions
             services.AddScoped<IFieldService, FieldService>();
             services.AddScoped<IFieldRepository, FieldRepository>();
             
+            services.AddScoped<IComponentService, ComponentService>();
+            services.AddScoped<IComponentRepository, ComponentRepository>();
+            
             services.AddScoped<IBackupService, BackupService>();
+            services.AddScoped<IIdentityService, IdentityService>();
+            services.AddScoped<ITokenService, TokenService>();
+            
+            services.AddScoped<IImageService, ImageService>();
+            services.AddScoped<IMessageService, MessageService>();
+            services.AddScoped<IRecommendationService, RecommendationService>();
+
+            services.AddSingleton<PasswordManager>();
+            services.AddSingleton<IPasswordHasher<User>, PasswordHasher<User>>();
             return services;
         }
         public static void ConfigureAutoMapper(this IServiceCollection services)
@@ -52,7 +82,8 @@ namespace GreenField.Api.Extensions
             services.AddAutoMapper(typeof(AutoMapperConfiguration));
         }
 
-        public static IServiceCollection ConfigureAuthentication(this IServiceCollection services)
+        public static IServiceCollection ConfigureAuthentication(this IServiceCollection services, 
+            IConfiguration configuration)
         {
             services.AddAuthentication(option =>
             {
@@ -68,7 +99,7 @@ namespace GreenField.Api.Extensions
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(
-                        Encoding.UTF8.GetBytes("MySecretSecretFlyAway"))
+                        Encoding.UTF8.GetBytes(configuration["JwtAuthentication:Secret"]))
                 };
             });
 
@@ -80,7 +111,7 @@ namespace GreenField.Api.Extensions
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FlyAway", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "GreenField", Version = "v1" });
 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
                 {

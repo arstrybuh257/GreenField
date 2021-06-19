@@ -4,6 +4,9 @@ using AutoMapper;
 using GreenField.Api.Models.Sensor;
 using GreenField.BLL.Dto;
 using GreenField.BLL.Services.Interfaces;
+using GreenField.BLL.Services.Sensor;
+using GreenField.BLL.Services.SensorService;
+using GreenField.BLL.Services.SensorService.Models;
 using GreenField.Common;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,20 +26,29 @@ namespace GreenField.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] BrowseSensors query)
         {
-            return Collection(await _sensorService.BrowseAsync());
+            return Collection(await _sensorService.BrowseAsync(query));
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(Guid id)
         {
-            return Single(await _sensorService.GetAsync(id));
+            if (OrganisationId == Guid.Empty)
+            {
+                return Forbid();
+            }
+            return Single(await _sensorService.GetAsync(id, OrganisationId));
         }
 
         [HttpPost]
         public async Task<IActionResult> Post(CreateSensorRequest request)
         {
+            if (OrganisationId == Guid.Empty)
+            {
+                return Forbid();
+            }
             var sensorDto = _mapper.Map<SensorDto>(request);
             sensorDto.Status = DeviceStatus.Enabled;
+            sensorDto.OrganisationId = OrganisationId;
             await _sensorService.CreateAsync(sensorDto);
             return Ok();
         }
@@ -44,8 +56,13 @@ namespace GreenField.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put([FromBody] UpdateSensorRequest request, Guid id)
         {
+            if (OrganisationId == Guid.Empty)
+            {
+                return Forbid();
+            }
             var sensorDto = _mapper.Map<SensorDto>(request);
             sensorDto.Id = id;
+            sensorDto.OrganisationId = OrganisationId;
             await _sensorService.UpdateAsync(sensorDto);
             return NoContent();
         }
@@ -53,7 +70,11 @@ namespace GreenField.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            await _sensorService.DeleteAsync(id);
+            if (OrganisationId == Guid.Empty)
+            {
+                return Forbid();
+            }
+            await _sensorService.DeleteAsync(id, OrganisationId);
             return NoContent();
         }
     }

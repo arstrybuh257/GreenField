@@ -1,42 +1,47 @@
-﻿using System.Threading.Tasks;
-using AutoMapper;
+﻿using System;
+using System.Threading.Tasks;
 using GreenField.Api.Models.Auth;
 using GreenField.BLL.Services.Interfaces;
-using GreenField.DAL.Entities;
+using GreenField.BLL.Services.UserService;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.JsonWebTokens;
 
 namespace GreenField.Api.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class AuthController : ControllerBase
+    public class AuthController : BaseController
     {
-        private readonly IAuthService _authService;
+        private readonly IIdentityService _identityService;
         private readonly IUserService _userService;
-        private readonly IMapper _mapper;
 
-        public AuthController(IUserService userService, IMapper mapper, IAuthService authService)
+        public AuthController(IIdentityService identityService, IUserService userService)
         {
+            _identityService = identityService;
             _userService = userService;
-            _mapper = mapper;
-            _authService = authService;
         }
 
         [HttpPost("login")]
         [AllowAnonymous]
         public async Task<ActionResult<string>> Login([FromBody] LoginRequest loginRequest)
         {
-            var userDto = await _userService.GetByEmailAsync(loginRequest.Email);
+            Console.WriteLine("Log");
+            string token = await _identityService.SignInAsync(loginRequest.Email, loginRequest.Password);
 
-            if (userDto != null)
+            return token;
+        }
+        
+        [HttpGet("current")]
+        [Authorize]
+        public async Task<IActionResult> Current()
+        {
+            if (User.Identity == null)
             {
-                var jwtToken = _authService.CreateToken(userDto);
-                return jwtToken;
+                return Unauthorized();
             }
-
-            return BadRequest("Invalid login attempt.");
+            
+            return Single(await _userService.GetByEmailAsync(User.Identity.Name));
         }
     }
 }

@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenField.Common", "GreenF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenField.BLL", "GreenField.BLL\GreenField.BLL.csproj", "{A65761CE-631E-4011-BDC4-4E08CD1A2008}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenField.EmailService", "GreenField.EmailService\GreenField.EmailService.csproj", "{8BF56195-EB0F-45A4-B528-84D1BE2DD028}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenField.IoT", "GreenField.IoT\GreenField.IoT.csproj", "{4EB6E502-1DE6-4D03-97F8-D30D94FB1799}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{A65761CE-631E-4011-BDC4-4E08CD1A2008}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A65761CE-631E-4011-BDC4-4E08CD1A2008}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A65761CE-631E-4011-BDC4-4E08CD1A2008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BF56195-EB0F-45A4-B528-84D1BE2DD028}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BF56195-EB0F-45A4-B528-84D1BE2DD028}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BF56195-EB0F-45A4-B528-84D1BE2DD028}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BF56195-EB0F-45A4-B528-84D1BE2DD028}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EB6E502-1DE6-4D03-97F8-D30D94FB1799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB6E502-1DE6-4D03-97F8-D30D94FB1799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB6E502-1DE6-4D03-97F8-D30D94FB1799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB6E502-1DE6-4D03-97F8-D30D94FB1799}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

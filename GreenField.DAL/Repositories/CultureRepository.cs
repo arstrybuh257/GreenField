@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using GreenField.DAL.DataAccess.Interfaces;
 using GreenField.DAL.Entities;
@@ -16,9 +17,9 @@ namespace GreenField.DAL.Repositories
             _repository = repository;
         }
 
-        public async Task<IEnumerable<Culture>> BrowseAsync()
+        public async Task<IEnumerable<Culture>> BrowseAsync(Expression<Func<Culture, bool>> culturesPredicate)
         {
-            return await _repository.BrowseAsync(x=>true, new object());
+            return await _repository.BrowseAsync(culturesPredicate, new object());
         }
 
         public async Task<Culture> GetAsync(Guid id)

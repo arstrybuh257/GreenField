@@ -69,5 +69,14 @@ namespace GreenField.Api.Controllers
             => string.IsNullOrWhiteSpace(User?.Identity?.Name) ? 
                 Guid.Empty : 
                 Guid.Parse(User.Identity.Name);
+        
+        protected Guid OrganisationId
+        {
+            get
+            {
+                var organisationId = User.FindFirst("OrganisationId")?.Value;
+                return string.IsNullOrWhiteSpace(organisationId) ? Guid.Empty : Guid.Parse(organisationId);
+            }
+        }
     }
 }
